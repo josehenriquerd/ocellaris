@@ -1,0 +1,256 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Adicione o link para o Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Tela com Header e Informação</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+
+    /* CSS to style the container */
+
+    body{
+      background-color: rgb(255, 255, 255);
+    }
+
+    h1{
+      font-family:Arial, sans-serif;
+      color: #ffff;
+      font-size: xx-large;
+      margin: 0 auto;
+      font-weight:100;
+    }
+
+    h2{
+      font-family:Arial, sans-serif ;
+    }
+
+    p{
+      font-family:Arial, sans-serif ;
+      text-align: justify;
+    }
+
+    .container {
+      padding-top: 50px;
+      margin-bottom: 0px;
+      text-align: justify;
+      font-family:Arial, sans-serif ;
+      padding-left: 50px;
+      padding-right: 10px;
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .container1 {
+      padding-top: 50px;
+      text-align: justify;
+      font-family:Arial, sans-serif ;
+      padding-left: 10px;
+      padding-right: 50px;
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .container2 {
+      margin-top: 0;
+      text-align: justify;
+      font-family:Arial, sans-serif ;
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 10px;
+      padding-left: 50px;
+      color: #ffff;
+    }
+
+    .container3 {
+      margin-top: 0;
+      text-align: justify;
+      font-family:Arial, sans-serif ;
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 10px;
+      padding-right: 50px;
+      color: #ffff;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* CSS to style the collapsible section */
+    .collapsible {
+      width: 100%;
+      margin: 0 auto;
+      background-color: rgb(0, 122, 236);
+      border: 0px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+    }
+
+    .collapsible button {
+      width: 100%;
+      text-align: center;
+      color:#ffffff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: large;
+      font-weight: bold;
+      font-family:Arial, sans-serif ;
+    }
+
+    .collapsible .content {
+      display: none;
+      padding: 10px 0;
+      font-family:Arial, sans-serif ;
+    }
+
+    .collapsible.active .content {
+      display: block;
+    }
+  </style>
+  <title>Collapsible Text Reveal</title>
+</head>
+<body>
+  <header class="bg-dark p-3 text-left">
+    <h1>Ocellaris Finance</h1>
+  </header>
+
+  <div class="container mt-3">
+    <div class="jumbotron">
+      <h2>O que é renda fixa?</h2>
+      <p>Existem basicamente três tipos de renda fixa: prefixados, pós-fixados e pós-fixados indexados à inflação, também chamados de “híbridos”. Em todas estas categorias, o cálculo do rendimento de cada título é fixado e estabelecido no momento da aplicação (daí o nome “renda fixa”), assim como o prazo de vencimento das aplicações.</p>
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="row mt-4">
+      <div class="col-md-10 offset-md-1 text-center">
+        <button id="btn1" class="btn btn-primary mt-3">Prefixado</button>
+        <button id="btn2" class="btn btn-primary mt-3">Pós-fixado</button>
+        <button id="btn3" class="btn btn-primary mt-3">Pós-fixado+</button>
+        <h3 id="text" class="mt-3"></h3>
+        <p id="additionalText" class="mt-3"></p>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById("btn1").addEventListener("click", function() {
+      document.getElementById("text").innerText = "Explicando Prefixados";
+      document.getElementById("additionalText").innerText = "Títulos de renda fixa prefixados são chamados assim porque sua taxa de retorno anual equivale a um percentual constante. Ou seja: o rendimento é fixo e não muda com as condições econômicas. Por exemplo: se você aplicar em um CDB prefixado com juros de 8% a.a., esta será a taxa de retorno até a data de vencimento do título, independentemente de oscilações do mercado.";
+    });
+
+    document.getElementById("btn2").addEventListener("click", function() {
+      document.getElementById("text").innerText = "Explicando Pós-fixados";
+      document.getElementById("additionalText").innerText = "O título pós-fixado é vinculado a um indexador da economia. Um exemplo: se um banco oferece uma LCA pós-fixada que rende 100% do CDI, isto significa que o retorno do título será igual à variação percentual do CDI naquele período. Em outras palavras, o título de renda fixa pós-fixado é aquele cujo rendimento não é um valor absoluto, mas depende do comportamento de um indicador como o CDI ou a Selic.";
+    });
+
+    document.getElementById("btn3").addEventListener("click", function() {
+      document.getElementById("text").innerText = "Explicando Pós-fixados + Inflação";
+      document.getElementById("additionalText").innerText = "Os pós-fixados indexados à inflação são simplesmente pós-fixados que rendem a variação percentual da inflação. A principal função deste tipo de aplicação não é gerar lucro, e sim, proteger o dinheiro do investidor contra a desvalorização da moeda causada pelo processo inflacionário.";
+    });
+    document.getElementById("btn1").click();
+  </script>
+
+  <!-- Adicione o link para o Bootstrap JS (opcional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <div class="container2">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">Fundo de Renda Fixa</button>
+      <div class="content">
+        <p>Os fundos de renda fixa podem aplicar exclusivamente em títulos prefixados ou pós-fixados, e são opções interessantes para quem busca exposição a uma ampla carteira de risco relativamente baixo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">Títulos públicos</button>
+      <div class="content">
+        <p>Os títulos públicos federais, ou títulos da dívida pública, são emitidos pelo governo para captar recursos e financiar investimentos e operações variadas.
+
+          O Tesouro Direto permite que qualquer pessoa física aplique em títulos públicos, oferecendo diversas opções prefixadas, pós-fixadas indexadas à Selic e pós-fixadas IPCA.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="container2">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">CDB</button>
+      <div class="content">
+        <p>O Certificado de Depósito Interbancário (CDB) é um dos tipos de renda fixa mais comuns do mercado. De forma análoga aos títulos públicos, os CDBs são emitidos por bancos para levantar capital e financiar operações.
+
+          Os CDBs podem variar amplamente em rendimento, prazo e liquidez. É possível encontrar tanto papéis prefixados quanto pós-fixados e a validade pode ser de um dia, seis meses, um ano, três anos ou mais.
+          
+          Assim como diversos investimentos de renda fixa, o CDB sofre cobrança de IR e é coberto pelo FGC (Fundo Garantidor de Crédito), uma associação de instituições financeiras que garante a indenização de até R$ 250 mil a investidores em caso de “calote” ao credor.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">LCI</button>
+      <div class="content">
+        <p>A sigla LCI significa “Letra de Crédito Imobiliário”. Em termos simples, estes títulos de renda fixa funcionam como os CDBs, mas são emitidos pelos bancos com o fim específico de captar recursos para investir no setor imobiliário.
+
+          As LCIs são geralmente pós-fixadas, mas algumas instituições oferecem papéis prefixados deste tipo. 
+          
+          Elas são cobertas pelo FGC e ainda contam com isenção de Imposto de Renda, o que contribui para retornos atraentes quando rendem juros nominais menores que os CDBs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="container2">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">LCA</button>
+      <div class="content">
+        <p>As Letras de Crédito do Agronegócio são essencialmente idênticas às LCIs, com a única diferença de que o capital levantado é destinado a investimentos no agronegócio.</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container3">
+    <div class="collapsible">
+      <button type="button" class="btn btn-link" onclick="toggleCollapse(this)">CRI e CRA</button>
+      <div class="content">
+        <p>Os Certificados de Recebíveis Imobiliários/do Agronegócio, assim como LCIs e LCAs, são títulos isentos de Imposto de Renda e seus recursos são destinados a estes dois setores.
+
+          Ao contrário das Letras de Crédito, porém, os CRIs e CRAs não possuem garantia do FGC e são quase sempre pós-fixados. 
+          
+          Além disso, são mais raros e costumam exigir aportes inacessíveis a investidores pessoa física.
+          
+          Eles são emitidos por empresas especializadas em securitização, um processo complexo que transforma “pacotes” de dívidas em ativos negociáveis no mercado financeiro.
+          
+          A securitização é útil para grandes imobiliárias, construtoras ou exportadoras que trabalham com financiamentos a longo prazo. 
+          
+          Na prática, a empresa vende o direito a uma dívida que será paga durante anos e recebe o valor de uma só vez.</p>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <script>
+    function toggleCollapse(button) {
+      button.parentElement.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
